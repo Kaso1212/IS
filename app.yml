@@ -79,7 +79,8 @@ resources:
    properties:
      name: { list_join: ['-', [ { get_param: 'Cvicenie'}, 'app_security_group' ] ] }
      rules: [
-       { direction: ingress, ethertype: IPv4, protocol: tcp, port_range_min: 1, port_range_max: 88, remote_ip_prefix: 158.193.0.0/16 },
+       { direction: ingress, ethertype: IPv4, protocol: tcp, port_range_min: 1, port_range_max: 65535, remote_ip_prefix: 158.193.0.0/16 },
+       { direction: ingress, ethertype: IPv4, protocol: udp, port_range_min: 1, port_range_max: 65535, remote_ip_prefix: 158.193.0.0/16 },
        { direction: ingress, ethertype: IPv4, protocol: icmp, remote_ip_prefix: 158.193.0.0/16 }
      ]
  
